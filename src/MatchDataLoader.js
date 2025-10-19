@@ -100,7 +100,7 @@ export class MatchDataLoader {
               team: entityInfo.team,
               role: entityInfo.role,
               x: trackedObj.x * 100,
-              y: -trackedObj.y * 100, // Using the corrected non-inverted Z-axis
+              y: trackedObj.y * 100, // Using the corrected non-inverted Z-axis
             });
           }
         }

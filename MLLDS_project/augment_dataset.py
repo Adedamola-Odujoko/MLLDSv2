@@ -13,7 +13,7 @@ import copy
 
 # --- Input/Output Files ---
 # This should be your clean, feature-extracted dataset from Phase 1 data collection.
-INPUT_FILE = 'mlds_data_v1_clean.jsonl' 
+INPUT_FILE = 'mlds_data_v2.1_patched.jsonl' 
 OUTPUT_FILE = 'mlds_data_v2_augmented.jsonl' # The final, massive dataset for training
 
 # --- API Endpoint ---
@@ -165,7 +165,7 @@ def run_augmentation_pipeline():
             
             if do_scale and random.random() < P_SCALING:
                 scale_factor = random.choice(SCALING_FACTORS)
-                current_player_data, current_lq_box = augment_scaling(current_player_data, current_lq_box)
+                current_player_data, current_lq_box = augment_scaling(current_player_data, current_lq_box,scale_factor)
             
             # Assemble the payload for the feature extractor server
             payload = {

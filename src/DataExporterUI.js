@@ -132,6 +132,7 @@ async function processStagedPacket(packet, labelType) {
       timestamp_ms: timestamp,
       label_type: labelType,
       attacking_team_name: attackingTeamName,
+      attacking_direction: attackingDirection,
     },
     ground_truth_labels: {
       has_leakage: labelType !== "negative",
